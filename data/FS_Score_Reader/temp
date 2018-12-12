@@ -1,0 +1,16 @@
+{'x0': Decimal('37.748'), 'x1': Decimal('554.712'), 'width': Decimal('516.965'), 'height': Decimal('53.796'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('94.432'), 'bottom': Decimal('148.227'), 'doctop': Decimal('94.432')}
+
+
+{'x0': Decimal('37.798'), 'x1': Decimal('553.613'), 'width': Decimal('515.815'), 'height': Decimal('216.985'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('151.279'), 'bottom': Decimal('368.264'), 'doctop': Decimal('151.279')}
+
+
+{'x0': Decimal('37.748'), 'x1': Decimal('554.712'), 'width': Decimal('516.965'), 'height': Decimal('12.099'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('371.913'), 'bottom': Decimal('384.012'), 'doctop': Decimal('371.913')}
+
+
+{'x0': Decimal('37.748'), 'x1': Decimal('554.712'), 'width': Decimal('516.965'), 'height': Decimal('53.797'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('398.810'), 'bottom': Decimal('452.607'), 'doctop': Decimal('398.810')}
+
+
+{'x0': Decimal('37.798'), 'x1': Decimal('553.613'), 'width': Decimal('515.815'), 'height': Decimal('216.985'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('455.658'), 'bottom': Decimal('672.643'), 'doctop': Decimal('455.658')}
+
+
+{'x0': Decimal('37.748'), 'x1': Decimal('554.712'), 'width': Decimal('516.965'), 'height': Decimal('12.099'), 'linewidth': Decimal('8.333'), 'stroke': True, 'fill': False, 'evenodd': False, 'stroking_color': None, 'non_stroking_color': None, 'object_type': 'rect', 'page_number': 1, 'top': Decimal('676.292'), 'bottom': Decimal('688.392'), 'doctop': Decimal('676.292')}
