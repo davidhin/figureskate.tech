@@ -5,7 +5,7 @@ Website for Figure Skate DB (Practice Project)
 `npm install`
 
 ## Set up website
-[https://scotch.io/tutorials/deploying-a-node-app-to-digital-ocean](Use this link)
+https://scotch.io/tutorials/deploying-a-node-app-to-digital-ocean
 
 
 ## Database
