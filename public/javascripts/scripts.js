@@ -9,7 +9,7 @@ $(document).ready(function() {
     let xhttp = new XMLHttpRequest();
     xhttp.open('GET', 'SkaterNames.json', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
-    xhttp.send();   
+    xhttp.send();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             skaterList = JSON.parse(xhttp.responseText);
@@ -26,7 +26,7 @@ function searchSkater() {
     // })
 
     // $( "#tags" ).autocomplete({
-    //     source: skaterNames, 
+    //     source: skaterNames,
     //     autoFocus: true
     // });
 
