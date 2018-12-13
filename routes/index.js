@@ -21,7 +21,7 @@ router.get('/SkaterNames.json', function(req, res, next) {
             return next(new Error('Server Error')); 
         }
 
-        var query = "SELECT DISTINCT SkaterName FROM Summary;";
+        var query = "SELECT DISTINCT SkaterName, Nation FROM Summary;";
         connection.query(query, function(err, results) {
             if (err) { 
                 console.error(err);
