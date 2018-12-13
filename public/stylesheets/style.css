@@ -1,6 +1,10 @@
 body {
-  padding: 50px;
+  padding: 0px !important;
+  margin: 0px !important;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+main {
 }
 
 a {
