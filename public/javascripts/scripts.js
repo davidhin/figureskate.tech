@@ -45,7 +45,7 @@ function countryMap() {
     map["IRL"] = "ie";
 
     map["CZE"] = "cz";
-    map["KOR"] = "kp";
+    map["KOR"] = "kr";
     map["ISL"] = "is";
     map["RUS"] = "ru";
     map["GBR"] = "gb";
