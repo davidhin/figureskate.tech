@@ -5,18 +5,18 @@ $(document).ready(function() {
     searchSkater();
     gen_summaryTable();
 
-    document.getElementById('chooseSkater').onkeypress = function(e){
-        if (!e) e = window.event;
-        var keyCode = e.keyCode || e.which;
-        if (keyCode == '13'){
-            gen_summaryTable();
-            return false;
-        }
-    }
-
-    $("#clearTable").click(function() {
-        $("#mainSkaterTable").empty();
-    });
+    //    document.getElementById('chooseSkater').onkeypress = function(e){
+    //        if (!e) e = window.event;
+    //        var keyCode = e.keyCode || e.which;
+    //        if (keyCode == '13'){
+    //            gen_summaryTable();
+    //            return false;
+    //        }
+    //    }
+    //
+    //    $("#clearTable").click(function() {
+    //        $("#mainSkaterTable").empty();
+    //    });
 
 });
 
