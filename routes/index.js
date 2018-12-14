@@ -8,6 +8,32 @@ router.get('/skaterSummary.json', function(req, res, next) {
         var query = "SELECT * from Summary";
         connection.query(query, function(err, results) {
             if (err) throw err;
+            connection.release();
+            res.json(results); // send response
+        });
+    });
+});
+
+// Database Testing
+router.post('/getSkaterLimit.json', function(req, res, next) {
+    
+    // Generate Custom Query
+    var query = "SELECT * FROM Summary"
+    if (req.body.SkaterName) {
+        query += " WHERE SkaterName = ?";
+        SkaterName = req.body.SkaterName;
+    }
+    query += " ORDER BY TotalSegment";
+    //query += " DESC LIMIT 20";
+    query += ";";
+
+    // Send query
+    SkaterName = req.body.SkaterName;
+    req.pool.getConnection(function(err, connection) {
+        if (err) throw err;
+        connection.query(query, [SkaterName], function(err, results) {
+            if (err) throw err;
+            connection.release();
             res.json(results); // send response
         });
     });

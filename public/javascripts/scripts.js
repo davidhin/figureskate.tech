@@ -2,9 +2,74 @@ var skaterList;
 
 $(document).ready(function() {
     'use strict';
-
     searchSkater();
+    gen_summaryTable();
+
+    document.getElementById('chooseSkater').onkeypress = function(e){
+        if (!e) e = window.event;
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == '13'){
+            gen_summaryTable();
+            return false;
+        }
+    }
+
+    $("#clearTable").click(function() {
+        $("#mainSkaterTable").empty();
+    });
+
 });
+
+
+function gen_summaryTable() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open('POST', 'getSkaterLimit.json', true);
+    xhttp.setRequestHeader('Content-type', 'application/json');
+    xhttp.send(JSON.stringify({
+        "SkaterName": $("#chooseSkater").val(),
+    }));
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            skaterList = JSON.parse(xhttp.responseText);
+
+            for (var i in skaterList) {
+                var row = document.createElement("tr");
+                var compname = document.createElement("td");
+                compname.appendChild(document.createTextNode(skaterList[i].CompName));
+                row.appendChild(compname);
+                var nation = document.createElement("td");
+                nation.appendChild(document.createTextNode(skaterList[i].Nation));
+                row.appendChild(nation);
+                var program = document.createElement("td");
+                program.appendChild(document.createTextNode(skaterList[i].Program));
+                row.appendChild(program);
+                var rank = document.createElement("td");
+                rank.appendChild(document.createTextNode(skaterList[i].Rank));
+                row.appendChild(rank);
+                var skatername = document.createElement("td");
+                skatername.appendChild(document.createTextNode(skaterList[i].SkaterName));
+                row.appendChild(skatername);
+                var components = document.createElement("td");
+                components.appendChild(document.createTextNode(skaterList[i].TotalComponents));
+                row.appendChild(components);
+                var deductions = document.createElement("td");
+                deductions.appendChild(document.createTextNode(skaterList[i].TotalDeductions));
+                row.appendChild(deductions);
+                var elements = document.createElement("td");
+                elements.appendChild(document.createTextNode(skaterList[i].TotalElements));
+                row.appendChild(elements);
+                var segment = document.createElement("td");
+                segment.appendChild(document.createTextNode(skaterList[i].TotalSegment));
+                row.appendChild(segment);
+                document.getElementById("mainSkaterTable").appendChild(row);
+            }
+
+            $('#skaterTable').DataTable();
+            //new Tablesort(document.getElementById('skaterTable'));
+        }
+    };
+}
 
 function searchSkater() {
     let countries = countryMap();
