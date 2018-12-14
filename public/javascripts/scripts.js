@@ -23,11 +23,9 @@ $(document).ready(function() {
 
 function gen_summaryTable() {
     let xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'getSkaterLimit.json', true);
+    xhttp.open('GET', 'skaterSummary.json', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
-    xhttp.send(JSON.stringify({
-        "SkaterName": $("#chooseSkater").val(),
-    }));
+    xhttp.send();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
