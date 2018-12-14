@@ -1,10 +1,10 @@
-var skaterList;
+var skaterList, countries;
 
 $(document).ready(function() {
     'use strict';
     searchSkater();
     gen_summaryTable();
-
+    countries = countryMap();
     //    document.getElementById('chooseSkater').onkeypress = function(e){
     //        if (!e) e = window.event;
     //        var keyCode = e.keyCode || e.which;
@@ -39,6 +39,9 @@ function gen_summaryTable() {
                 compname.appendChild(document.createTextNode(skaterList[i].CompName));
                 row.appendChild(compname);
                 var nation = document.createElement("td");
+                var flag = document.createElement("span");
+                flag.classList.add("flag","flag-" + countries[skaterList[i].Nation]);
+                nation.appendChild(flag); 
                 nation.appendChild(document.createTextNode(skaterList[i].Nation));
                 row.appendChild(nation);
                 var program = document.createElement("td");
