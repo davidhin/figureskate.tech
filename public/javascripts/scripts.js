@@ -50,7 +50,9 @@ function gen_ComponentsTable() {
                 row.appendChild(panelscore);
                 document.getElementById("mainComponentsTable").appendChild(row);
             }
-            $('#componentsTable').DataTable();
+            $('#componentsTable').DataTable({
+                "autoWidth": false
+            });
         }
     }
 }
@@ -96,7 +98,9 @@ function gen_ElementsTable() {
                 row.appendChild(panelscore);
                 document.getElementById("mainElementsTable").appendChild(row);
             }
-            $('#elementsTable').DataTable();
+            $('#elementsTable').DataTable({
+                "autoWidth": false
+            });
         }
     }
 }
@@ -146,7 +150,9 @@ function gen_summaryTable() {
                 document.getElementById("mainSkaterTable").appendChild(row);
             }
 
-            $('#skaterTable').DataTable();
+            $('#skaterTable').DataTable({
+                "autoWidth": false
+            });
             //new Tablesort(document.getElementById('skaterTable'));
         }
     };
