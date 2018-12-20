@@ -15,6 +15,32 @@ router.get('/skaterSummary.json', function(req, res, next) {
 });
 
 // Database Testing
+router.get('/skaterElements.json', function(req, res, next) {
+    req.pool.getConnection(function(err, connection) {
+        if (err) throw err;
+        var query = "SELECT * from Elements";
+        connection.query(query, function(err, results) {
+            if (err) throw err;
+            connection.release();
+            res.json(results); // send response
+        });
+    });
+});
+
+// Database Testing
+router.get('/skaterComponents.json', function(req, res, next) {
+    req.pool.getConnection(function(err, connection) {
+        if (err) throw err;
+        var query = "SELECT * from Components";
+        connection.query(query, function(err, results) {
+            if (err) throw err;
+            connection.release();
+            res.json(results); // send response
+        });
+    });
+});
+
+// Database Testing
 router.post('/getSkaterLimit.json', function(req, res, next) {
     
     // Generate Custom Query

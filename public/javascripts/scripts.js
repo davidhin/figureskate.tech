@@ -4,6 +4,8 @@ $(document).ready(function() {
     'use strict';
     searchSkater();
     gen_summaryTable();
+    gen_ElementsTable();
+    gen_ComponentsTable();
     countries = countryMap();
     //    document.getElementById('chooseSkater').onkeypress = function(e){
     //        if (!e) e = window.event;
@@ -20,6 +22,84 @@ $(document).ready(function() {
 
 });
 
+function gen_ComponentsTable() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'skaterComponents.json', true);
+    xhttp.setRequestHeader('Content-type', 'application/json');
+    xhttp.send();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {            
+            skaterComponents = JSON.parse(xhttp.responseText);
+            for (let i in skaterComponents) {
+                var row = document.createElement("tr");
+                var compname = document.createElement("td");
+                compname.appendChild(document.createTextNode(skaterComponents[i].CompName));
+                row.appendChild(compname);
+                var skatername = document.createElement("td");
+                skatername.appendChild(document.createTextNode(skaterComponents[i].SkaterName));
+                row.appendChild(skatername);
+                var program = document.createElement("td");
+                program.appendChild(document.createTextNode(skaterComponents[i].Program));
+                row.appendChild(program);
+                var compdesc = document.createElement("td");
+                compdesc.appendChild(document.createTextNode(skaterComponents[i].CompDesc));
+                row.appendChild(compdesc);
+                var panelscore = document.createElement("td");
+                panelscore.appendChild(document.createTextNode(skaterComponents[i].PanelScore));
+                row.appendChild(panelscore);
+                document.getElementById("mainComponentsTable").appendChild(row);
+            }
+            $('#componentsTable').DataTable();
+        }
+    }
+}
+
+function gen_ElementsTable() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'skaterElements.json', true);
+    xhttp.setRequestHeader('Content-type', 'application/json');
+    xhttp.send();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            skaterElements = JSON.parse(xhttp.responseText);
+
+            for (let i in skaterElements) {
+                var row = document.createElement("tr");
+                var compname = document.createElement("td");
+                compname.appendChild(document.createTextNode(skaterElements[i].CompName));
+                row.appendChild(compname);
+                var skatername = document.createElement("td");
+                skatername.appendChild(document.createTextNode(skaterElements[i].SkaterName));
+                row.appendChild(skatername);
+                var program = document.createElement("td");
+                program.appendChild(document.createTextNode(skaterElements[i].Program));
+                row.appendChild(program);
+                var elementnum = document.createElement("td");
+                elementnum.appendChild(document.createTextNode(skaterElements[i].ElementNum));
+                row.appendChild(elementnum);
+                var elementdesc = document.createElement("td");
+                elementdesc.appendChild(document.createTextNode(skaterElements[i].ElementDesc));
+                row.appendChild(elementdesc);
+                var base = document.createElement("td");
+                base.appendChild(document.createTextNode(skaterElements[i].BaseValue));
+                row.appendChild(base);
+                var goe = document.createElement("td");
+                goe.appendChild(document.createTextNode(skaterElements[i].GOE));
+                row.appendChild(goe);
+                var infoflag = document.createElement("td");
+                infoflag.appendChild(document.createTextNode(skaterElements[i].InfoFlag));
+                row.appendChild(infoflag);
+                var panelscore = document.createElement("td");
+                panelscore .appendChild(document.createTextNode(skaterElements[i].PanelScore));
+                row.appendChild(panelscore);
+                document.getElementById("mainElementsTable").appendChild(row);
+            }
+            $('#elementsTable').DataTable();
+        }
+    }
+}
 
 function gen_summaryTable() {
     let xhttp = new XMLHttpRequest();

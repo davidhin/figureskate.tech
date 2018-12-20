@@ -10,3 +10,7 @@ main {
 a {
   color: #00B7FF;
 }
+
+table.dataTable tbody tr {
+    padding: 0 !important;
+}

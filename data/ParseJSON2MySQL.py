@@ -39,7 +39,7 @@ for i in range(1, len(sys.argv)):
             tds = data["performances"][j]["metadata"]["total_deductions"].encode("utf-8").replace("Total\nDeductions\n ",'')
             tes = data["performances"][j]["metadata"]["total_element_score"].encode("utf-8").replace("Total \nElement\nScore\n ",'').replace("Score\n",'')
             tss = data["performances"][j]["metadata"]["total_segment_score"].encode("utf-8").replace("Total \nSegment\nScore\n ",'').replace("Score\n",'')
-            f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\n'.format(competition, name, nation, program, rank, sn, tcs, tds, tes, tss))
+            f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\n'.format(competition, name, nation, program, rank, sn, tcs, tds, tes, tss)) 
         # Close file
         f.close() 
 
