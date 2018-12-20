@@ -1,1 +1,1 @@
-mysql -u davidhin -p fskate < $1
+mysql -u root -p fskate < $1
